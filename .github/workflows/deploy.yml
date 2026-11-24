@@ -23,7 +23,8 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      # npm ci respinge lockfile-ul din cauza unui bug npm cu dependențe imbricate (commander)
+      - run: npm install --no-audit --no-fund
       - run: npx nuxt generate
         # Fără domeniu propriu (user.github.io/repo), decomentează:
         # env:
