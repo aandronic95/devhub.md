@@ -3,8 +3,10 @@ import { site } from '~/site.config'
 
 const { t } = useI18n()
 
-const services = ['sites', 'apps', 'shops', 'custom']
+const services = ['sites', 'apps', 'mobile', 'shops', 'custom']
+const principles = ['speed', 'seo', 'mobile', 'code']
 const steps = ['brief', 'design', 'build', 'launch']
+const faqKeys = ['time', 'mobile', 'seo', 'languages', 'stack', 'start']
 const hasProjects = site.projects.length > 0
 
 const { email, phone, telegram, city } = site.contact
@@ -17,23 +19,48 @@ const contacts = [
 
 const sections = computed(() =>
   [
-    { id: 'services', label: t('nav.services') },
-    { id: 'process', label: t('nav.process') },
-    hasProjects && { id: 'projects', label: t('nav.projects') },
-    { id: 'contact', label: t('nav.contact') }
-  ].filter(Boolean) as { id: string; label: string }[]
+    { id: 'services', label: t('nav.services'), nav: true },
+    { id: 'why', label: t('nav.why'), nav: false },
+    { id: 'process', label: t('nav.process'), nav: true },
+    { id: 'stack', label: t('nav.stack'), nav: true },
+    hasProjects && { id: 'projects', label: t('nav.projects'), nav: true },
+    { id: 'faq', label: t('nav.faq'), nav: true },
+    { id: 'contact', label: t('nav.contact'), nav: true }
+  ].filter(Boolean) as { id: string; label: string; nav: boolean }[]
 )
 
-const sectionNumber = (id: string) =>
-  String(sections.value.findIndex((s) => s.id === id) + 1).padStart(2, '0')
+const navLinks = computed(() => sections.value.filter((s) => s.nav))
+
+const pad = (n: number) => String(n + 1).padStart(2, '0')
+const num = (id: string) => pad(sections.value.findIndex((s) => s.id === id))
+
+const faq = computed(() =>
+  faqKeys.map((key) => ({ q: t(`faq.items.${key}.q`), a: t(`faq.items.${key}.a`) }))
+)
+
+useHead(() => ({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faq.value.map((item) => ({
+          '@type': 'Question',
+          name: item.q,
+          acceptedAnswer: { '@type': 'Answer', text: item.a }
+        }))
+      })
+    }
+  ]
+}))
 
 const year = new Date().getFullYear()
-const pad = (n: number) => String(n + 1).padStart(2, '0')
 </script>
 
 <template>
   <div class="page">
-    <AppHeader :links="sections" />
+    <AppHeader :links="navLinks" />
 
     <main>
       <section class="hero">
@@ -52,10 +79,7 @@ const pad = (n: number) => String(n + 1).padStart(2, '0')
       </section>
 
       <section id="services" class="section" aria-labelledby="services-title">
-        <header class="section__head">
-          <span class="label">{{ sectionNumber('services') }}</span>
-          <h2 id="services-title" class="section__title">{{ t('services.title') }}</h2>
-        </header>
+        <SectionHead id="services-title" :index="num('services')" :title="t('services.title')" />
         <ol class="rows">
           <li v-for="(key, i) in services" :key="key" class="row">
             <span class="row__index label">{{ pad(i) }}</span>
@@ -65,11 +89,18 @@ const pad = (n: number) => String(n + 1).padStart(2, '0')
         </ol>
       </section>
 
+      <section id="why" class="section section--tight" aria-labelledby="why-title">
+        <SectionHead id="why-title" :index="num('why')" :title="t('why.title')" />
+        <ul class="tiles">
+          <li v-for="key in principles" :key="key" class="tile">
+            <h3 class="tile__title">{{ t(`why.items.${key}.title`) }}</h3>
+            <p class="tile__text">{{ t(`why.items.${key}.text`) }}</p>
+          </li>
+        </ul>
+      </section>
+
       <section id="process" class="section" aria-labelledby="process-title">
-        <header class="section__head">
-          <span class="label">{{ sectionNumber('process') }}</span>
-          <h2 id="process-title" class="section__title">{{ t('process.title') }}</h2>
-        </header>
+        <SectionHead id="process-title" :index="num('process')" :title="t('process.title')" />
         <ol class="steps">
           <li v-for="(key, i) in steps" :key="key" class="step">
             <span class="step__index" aria-hidden="true">{{ pad(i) }}</span>
@@ -79,11 +110,18 @@ const pad = (n: number) => String(n + 1).padStart(2, '0')
         </ol>
       </section>
 
+      <section id="stack" class="section section--tight" aria-labelledby="stack-title">
+        <SectionHead id="stack-title" :index="num('stack')" :title="t('stack.title')" />
+        <dl class="stack">
+          <div v-for="group in site.stack" :key="group.key" class="stack__group">
+            <dt class="label">{{ t(`stack.groups.${group.key}`) }}</dt>
+            <dd v-for="item in group.items" :key="item" class="stack__item">{{ item }}</dd>
+          </div>
+        </dl>
+      </section>
+
       <section v-if="hasProjects" id="projects" class="section" aria-labelledby="projects-title">
-        <header class="section__head">
-          <span class="label">{{ sectionNumber('projects') }}</span>
-          <h2 id="projects-title" class="section__title">{{ t('projects.title') }}</h2>
-        </header>
+        <SectionHead id="projects-title" :index="num('projects')" :title="t('projects.title')" />
         <ul class="projects">
           <li v-for="project in site.projects" :key="project.key">
             <a :href="project.url" target="_blank" rel="noopener" class="project">
@@ -96,19 +134,27 @@ const pad = (n: number) => String(n + 1).padStart(2, '0')
         </ul>
       </section>
 
+      <section id="faq" class="section" aria-labelledby="faq-title">
+        <SectionHead id="faq-title" :index="num('faq')" :title="t('faq.title')" />
+        <FaqList :items="faq" />
+      </section>
+
       <section id="contact" class="contact" aria-labelledby="contact-title">
-        <span class="label">{{ sectionNumber('contact') }}</span>
-        <h2 id="contact-title" class="contact__title">{{ t('contact.title') }}</h2>
-        <p class="contact__text">{{ t('contact.text') }}</p>
-        <dl v-if="contacts.length" class="contact__list">
-          <div v-for="item in contacts" :key="item.key">
-            <dt class="label">{{ t(`contact.${item.key}`) }}</dt>
-            <dd>
-              <a v-if="item.href" :href="item.href">{{ item.value }}</a>
-              <template v-else>{{ item.value }}</template>
-            </dd>
-          </div>
-        </dl>
+        <div class="contact__intro">
+          <span class="label">{{ num('contact') }}</span>
+          <h2 id="contact-title" class="contact__title">{{ t('contact.title') }}</h2>
+          <p class="contact__text">{{ t('contact.text') }}</p>
+          <dl v-if="contacts.length" class="contact__list">
+            <div v-for="item in contacts" :key="item.key">
+              <dt class="label">{{ t(`contact.${item.key}`) }}</dt>
+              <dd>
+                <a v-if="item.href" :href="item.href">{{ item.value }}</a>
+                <template v-else>{{ item.value }}</template>
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <ContactForm :services="services" />
       </section>
     </main>
 

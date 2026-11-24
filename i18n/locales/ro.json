@@ -1,19 +1,22 @@
 {
   "seo": {
-    "title": "DevHub.md — Dezvoltare software și aplicații web în Moldova",
-    "description": "Studio de dezvoltare software din Moldova. Creăm site-uri de prezentare, aplicații web și SaaS, magazine online și software la comandă pentru afaceri."
+    "title": "DevHub.md — Dezvoltare software, site-uri și aplicații în Moldova",
+    "description": "Studio de dezvoltare software din Moldova. Creăm site-uri de prezentare, aplicații web și mobile, magazine online și software la comandă pentru afaceri."
   },
   "nav": {
     "main": "Navigare",
     "language": "Limba",
     "services": "Servicii",
+    "why": "De ce noi",
     "process": "Proces",
+    "stack": "Tehnologii",
     "projects": "Proiecte",
+    "faq": "Întrebări",
     "contact": "Contact"
   },
   "hero": {
     "tagline": "Studio de dezvoltare software",
-    "text": "Construim site-uri, aplicații web și software la comandă pentru afaceri care vor să crească. Cod curat, interfețe rapide, fără complicații.",
+    "text": "Construim site-uri, aplicații web și mobile și software la comandă pentru afaceri care vor să crească. Cod curat, interfețe rapide, fără complicații.",
     "cta": "Începe un proiect",
     "secondary": "Ce facem"
   },
@@ -28,6 +31,10 @@
         "title": "Aplicații web și SaaS",
         "text": "Platforme cu conturi de utilizator, abonamente, plăți și panou de administrare, gândite să scaleze."
       },
+      "mobile": {
+        "title": "Aplicații mobile",
+        "text": "Aplicații pentru Android și iOS construite cu React Native, dintr-o singură bază de cod."
+      },
       "shops": {
         "title": "Magazine online",
         "text": "Catalog, coș, plăți online și gestiunea comenzilor — tot ce trebuie ca să vinzi pe internet."
@@ -36,6 +43,15 @@
         "title": "Software la comandă",
         "text": "CRM-uri, automatizări și integrări construite în jurul proceselor reale ale afacerii tale."
       }
+    }
+  },
+  "why": {
+    "title": "De ce DevHub",
+    "items": {
+      "speed": { "title": "Viteză", "text": "Site-uri și aplicații care se încarcă repede pe orice conexiune și pe orice dispozitiv." },
+      "seo": { "title": "SEO din prima zi", "text": "Structură, meta-date și date structurate gândite de la început, nu adăugate la final." },
+      "mobile": { "title": "Întâi pentru telefon", "text": "Proiectăm mai întâi pentru ecranul mic, unde vin majoritatea vizitatorilor." },
+      "code": { "title": "Cod curat", "text": "Cod clar și ușor de extins, ca produsul să poată crește fără rescrieri." }
     }
   },
   "process": {
@@ -47,10 +63,48 @@
       "launch": { "title": "Lansare", "text": "Publicăm, măsurăm și îmbunătățim pe baza datelor reale." }
     }
   },
+  "stack": {
+    "title": "Tehnologii",
+    "groups": {
+      "frontend": "Interfețe",
+      "mobile": "Mobil",
+      "backend": "Backend",
+      "data": "Date și infrastructură"
+    }
+  },
   "projects": {
     "title": "Proiecte",
     "open": "Deschide",
     "items": {}
+  },
+  "faq": {
+    "title": "Întrebări frecvente",
+    "items": {
+      "time": {
+        "q": "Cât durează realizarea unui site de prezentare?",
+        "a": "De obicei 1–2 săptămâni, în funcție de numărul de pagini și de cât de repede sunt gata textele și imaginile. Pentru aplicații web și mobile stabilim un plan pe etape după prima discuție."
+      },
+      "mobile": {
+        "q": "Faceți și aplicații mobile?",
+        "a": "Da. Dezvoltăm aplicații pentru Android și iOS cu React Native, astfel încât aceeași bază de cod funcționează pe ambele platforme."
+      },
+      "seo": {
+        "q": "Site-ul va fi optimizat pentru Google?",
+        "a": "Da. Fiecare site este rapid, adaptat pentru telefon și are structura tehnică necesară pentru SEO: meta-date, sitemap, date structurate și adrese separate pentru fiecare limbă."
+      },
+      "languages": {
+        "q": "Puteți face site-ul în mai multe limbi?",
+        "a": "Da, de exemplu în română, rusă și engleză. Fiecare limbă are pagini proprii, ca site-ul să apară în căutări în toate limbile."
+      },
+      "stack": {
+        "q": "Ce tehnologii folosiți?",
+        "a": "Vue, Nuxt, React și Next.js pentru interfețe, Laravel și PHP pentru backend, MySQL sau PostgreSQL pentru date, Docker pentru livrare și React Native pentru aplicații mobile. Alegem în funcție de proiect."
+      },
+      "start": {
+        "q": "Cum începem?",
+        "a": "Completezi formularul de mai jos sau ne scrii pe email. Revenim cu câteva întrebări, apoi cu o propunere cu etape și termene."
+      }
+    }
   },
   "contact": {
     "title": "Ai un proiect în minte?",
@@ -59,6 +113,19 @@
     "phone": "Telefon",
     "telegram": "Telegram",
     "city": "Locație"
+  },
+  "form": {
+    "name": "Nume",
+    "email": "Email",
+    "type": "Tip de proiect",
+    "typeOther": "Altceva",
+    "message": "Mesaj",
+    "messagePlaceholder": "Câteva rânduri despre proiect, termen și buget",
+    "submit": "Trimite mesajul",
+    "sending": "Se trimite…",
+    "success": "Mulțumim! Mesajul a fost trimis, revenim în curând.",
+    "error": "Mesajul nu a putut fi trimis. Scrie-ne direct la {email}.",
+    "subject": "Cerere nouă de pe devhub.md"
   },
   "footer": {
     "rights": "Toate drepturile rezervate.",

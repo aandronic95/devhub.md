@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     defaultLocale: 'ro',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false,
+    bundle: { optimizeTranslationDirective: false },
     locales: [
       { code: 'ro', language: 'ro', name: 'Română', file: 'ro.json' },
       { code: 'en', language: 'en', name: 'English', file: 'en.json' },
