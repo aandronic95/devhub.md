@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "DevHub.md — Dezvoltare software, site-uri și aplicații web în Moldova",
+    "description": "DevHub.md creează site-uri de prezentare, aplicații web și SaaS, magazine online și software la comandă pentru afaceri din Moldova și din străinătate."
+  },
+  "nav": { "services": "Servicii", "projects": "Proiecte", "contact": "Contact", "language": "Limba" },
+  "hero": {
+    "tagline": "Studio de dezvoltare software",
+    "text": "Creăm site-uri, aplicații web și software la comandă pentru afaceri — rapid, curat și gata să crească odată cu tine.",
+    "cta": "Hai să discutăm",
+    "secondary": "Vezi serviciile"
+  },
+  "services": {
+    "title": "Ce facem",
+    "lead": "De la o pagină de prezentare până la o platformă completă.",
+    "items": {
+      "sites": { "title": "Site-uri de prezentare", "text": "Site-uri rapide și optimizate SEO, care arată bine pe orice ecran și aduc clienți." },
+      "apps": { "title": "Aplicații web și SaaS", "text": "Platforme cu conturi, abonamente și panouri de administrare, construite să scaleze." },
+      "shops": { "title": "Magazine online", "text": "Catalog, coș, plăți online și livrare — tot ce trebuie ca să vinzi pe internet." },
+      "custom": { "title": "Software la comandă", "text": "CRM-uri, automatizări și integrări făcute exact după procesele afacerii tale." }
+    }
+  },
+  "projects": { "title": "Proiecte", "lead": "Câteva lucruri construite de noi.", "open": "Deschide", "items": {} },
+  "contact": {
+    "title": "Hai să construim ceva împreună",
+    "text": "Spune-ne pe scurt ce ai nevoie, iar noi revenim cu o propunere.",
+    "email": "Email",
+    "phone": "Telefon",
+    "telegram": "Telegram",
+    "city": "Locație"
+  },
+  "footer": { "rights": "Toate drepturile rezervate." }
+}

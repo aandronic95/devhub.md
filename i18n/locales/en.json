@@ -1,0 +1,33 @@
+{
+  "seo": {
+    "title": "DevHub.md — Software development, websites and web apps in Moldova",
+    "description": "DevHub.md builds business websites, web apps and SaaS, online stores and custom software for companies in Moldova and abroad."
+  },
+  "nav": { "services": "Services", "projects": "Projects", "contact": "Contact", "language": "Language" },
+  "hero": {
+    "tagline": "Software development studio",
+    "text": "We build websites, web apps and custom software for businesses — fast, clean and ready to grow with you.",
+    "cta": "Let's talk",
+    "secondary": "See services"
+  },
+  "services": {
+    "title": "What we do",
+    "lead": "From a single landing page to a complete platform.",
+    "items": {
+      "sites": { "title": "Business websites", "text": "Fast, SEO-optimized websites that look great on every screen and bring in customers." },
+      "apps": { "title": "Web apps and SaaS", "text": "Platforms with accounts, subscriptions and admin panels, built to scale." },
+      "shops": { "title": "Online stores", "text": "Catalog, cart, online payments and delivery — everything you need to sell online." },
+      "custom": { "title": "Custom software", "text": "CRMs, automations and integrations built around the way your business works." }
+    }
+  },
+  "projects": { "title": "Projects", "lead": "A few things we have built.", "open": "Open", "items": {} },
+  "contact": {
+    "title": "Let's build something together",
+    "text": "Tell us briefly what you need and we will get back to you with a proposal.",
+    "email": "Email",
+    "phone": "Phone",
+    "telegram": "Telegram",
+    "city": "Location"
+  },
+  "footer": { "rights": "All rights reserved." }
+}
