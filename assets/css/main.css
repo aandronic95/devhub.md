@@ -7,9 +7,9 @@
   --grid: rgba(13, 13, 13, 0.06);
   --accent: #e5400e;
 
-  --font-display: 'Unbounded Variable', 'Arial Black', sans-serif;
+  --font-display: 'Martian Mono Variable', ui-monospace, monospace;
   --font-body: 'Manrope Variable', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+  --font-mono: var(--font-display);
 
   --gutter: clamp(20px, 4vw, 56px);
   --header-h: 64px;
@@ -75,9 +75,9 @@ a {
 
 .label {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 500;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
@@ -124,9 +124,9 @@ a {
 
 .header__logo {
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 700;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
 }
 
 .header__nav {
@@ -191,10 +191,11 @@ a {
 
 .hero__title {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(44px, 12.4vw, 232px);
-  line-height: 0.86;
-  letter-spacing: -0.06em;
+  font-weight: 700;
+  font-stretch: 112.5%;
+  font-size: clamp(36px, 13.2vw, 250px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
 }
 
 .hero__word {
@@ -286,7 +287,7 @@ a {
 
 .section__title {
   font-family: var(--font-display);
-  font-size: clamp(36px, 6vw, 88px);
+  font-size: clamp(30px, 5vw, 76px);
   font-weight: 700;
   line-height: 1;
   letter-spacing: -0.05em;
@@ -313,9 +314,9 @@ a {
 
 .row__title {
   font-family: var(--font-display);
-  font-size: clamp(22px, 2.8vw, 40px);
+  font-size: clamp(19px, 2.3vw, 34px);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.04em;
 }
 
@@ -364,15 +365,15 @@ a {
   font-size: clamp(56px, 7vw, 104px);
   font-weight: 800;
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.05em;
   color: #cfccc2;
 }
 
 .step__title {
   font-family: var(--font-display);
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .step__text {
@@ -441,12 +442,12 @@ a {
 }
 
 .contact__title {
-  max-width: 14ch;
+  max-width: 16ch;
   font-family: var(--font-display);
-  font-size: clamp(40px, 8vw, 128px);
+  font-size: clamp(32px, 6.6vw, 108px);
   font-weight: 700;
   line-height: 0.95;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.05em;
 }
 
 .contact__text {
