@@ -1,35 +1,29 @@
 # devhub.md
 
-Site de prezentare pentru DevHub.md — Nuxt 3 + @nuxtjs/i18n (RO / EN / RU), generat static pentru GitHub Pages.
+Company website for DevHub.md. Built with Nuxt 3 and `@nuxtjs/i18n`, statically generated and hosted on GitHub Pages.
 
-## Pornire
+## Development
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
-npm run generate   # site static în .output/public
+npm run dev
+npm run generate   # static output in .output/public
 ```
 
-## Unde modifici
+## Structure
 
-| Ce | Fișier |
-|---|---|
-| Email, telefon, Telegram, oraș, proiecte | `site.config.ts` |
-| Textele în fiecare limbă | `i18n/locales/ro.json`, `en.json`, `ru.json` |
-| Culori, fonturi, spații | `assets/main.css` (variabilele din `:root`) |
-| Structura paginii | `pages/index.vue` |
+| Path | Purpose |
+| --- | --- |
+| `site.config.ts` | Contact details and portfolio projects |
+| `i18n/locales/` | Copy for `ro` (default), `en`, `ru` |
+| `pages/index.vue` | Page layout |
+| `components/AppHeader.vue` | Header, navigation, language switcher |
+| `assets/css/` | Styles and self-hosted fonts |
+| `public/` | Static files: icons, Open Graph image, sitemap, robots |
 
-URL-uri: `/` (română), `/en`, `/ru`. Fiecare are titlu, descriere, `canonical` și `hreflang` proprii.
+Routes: `/`, `/en`, `/ru`. Each page has its own title, description, canonical URL and `hreflang` alternates.
 
-## Deploy pe GitHub Pages
+## Deployment
 
-1. Urcă proiectul într-un repo pe GitHub, branch `main`.
-2. Settings → Pages → Source: **GitHub Actions**.
-3. La fiecare push, `.github/workflows/deploy.yml` construiește și publică site-ul.
-4. Domeniu propriu: `public/CNAME` conține `devhub.md`. La registrar adaugă recordurile DNS pentru GitHub Pages
-   (A: 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153), apoi bifează „Enforce HTTPS”.
-   Fără domeniu (user.github.io/repo): șterge `public/CNAME` și decomentează `NUXT_APP_BASE_URL` în workflow.
-
-## După lansare
-
-Adaugă site-ul în Google Search Console și trimite `https://devhub.md/sitemap.xml`.
+Every push to `main` builds and publishes the site via `.github/workflows/deploy.yml`.
+The custom domain `devhub.md` is configured in the repository Pages settings and in Cloudflare DNS.

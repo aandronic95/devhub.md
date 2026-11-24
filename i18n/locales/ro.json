@@ -1,33 +1,67 @@
 {
   "seo": {
-    "title": "DevHub.md — Dezvoltare software, site-uri și aplicații web în Moldova",
-    "description": "DevHub.md creează site-uri de prezentare, aplicații web și SaaS, magazine online și software la comandă pentru afaceri din Moldova și din străinătate."
+    "title": "DevHub.md — Dezvoltare software și aplicații web în Moldova",
+    "description": "Studio de dezvoltare software din Moldova. Creăm site-uri de prezentare, aplicații web și SaaS, magazine online și software la comandă pentru afaceri."
   },
-  "nav": { "services": "Servicii", "projects": "Proiecte", "contact": "Contact", "language": "Limba" },
+  "nav": {
+    "main": "Navigare",
+    "language": "Limba",
+    "services": "Servicii",
+    "process": "Proces",
+    "projects": "Proiecte",
+    "contact": "Contact"
+  },
   "hero": {
     "tagline": "Studio de dezvoltare software",
-    "text": "Creăm site-uri, aplicații web și software la comandă pentru afaceri — rapid, curat și gata să crească odată cu tine.",
-    "cta": "Hai să discutăm",
-    "secondary": "Vezi serviciile"
+    "text": "Construim site-uri, aplicații web și software la comandă pentru afaceri care vor să crească. Cod curat, interfețe rapide, fără complicații.",
+    "cta": "Începe un proiect",
+    "secondary": "Ce facem"
   },
   "services": {
-    "title": "Ce facem",
-    "lead": "De la o pagină de prezentare până la o platformă completă.",
+    "title": "Servicii",
     "items": {
-      "sites": { "title": "Site-uri de prezentare", "text": "Site-uri rapide și optimizate SEO, care arată bine pe orice ecran și aduc clienți." },
-      "apps": { "title": "Aplicații web și SaaS", "text": "Platforme cu conturi, abonamente și panouri de administrare, construite să scaleze." },
-      "shops": { "title": "Magazine online", "text": "Catalog, coș, plăți online și livrare — tot ce trebuie ca să vinzi pe internet." },
-      "custom": { "title": "Software la comandă", "text": "CRM-uri, automatizări și integrări făcute exact după procesele afacerii tale." }
+      "sites": {
+        "title": "Site-uri de prezentare",
+        "text": "Site-uri rapide, optimizate SEO și adaptate pentru telefon, care prezintă clar afacerea și aduc cereri noi."
+      },
+      "apps": {
+        "title": "Aplicații web și SaaS",
+        "text": "Platforme cu conturi de utilizator, abonamente, plăți și panou de administrare, gândite să scaleze."
+      },
+      "shops": {
+        "title": "Magazine online",
+        "text": "Catalog, coș, plăți online și gestiunea comenzilor — tot ce trebuie ca să vinzi pe internet."
+      },
+      "custom": {
+        "title": "Software la comandă",
+        "text": "CRM-uri, automatizări și integrări construite în jurul proceselor reale ale afacerii tale."
+      }
     }
   },
-  "projects": { "title": "Proiecte", "lead": "Câteva lucruri construite de noi.", "open": "Deschide", "items": {} },
+  "process": {
+    "title": "Cum lucrăm",
+    "steps": {
+      "brief": { "title": "Discuție", "text": "Stabilim obiectivele, publicul și ce trebuie să facă produsul." },
+      "design": { "title": "Design", "text": "Schițăm structura și interfața înainte de prima linie de cod." },
+      "build": { "title": "Dezvoltare", "text": "Lucrăm în etape scurte, iar tu vezi progresul pe parcurs." },
+      "launch": { "title": "Lansare", "text": "Publicăm, măsurăm și îmbunătățim pe baza datelor reale." }
+    }
+  },
+  "projects": {
+    "title": "Proiecte",
+    "open": "Deschide",
+    "items": {}
+  },
   "contact": {
-    "title": "Hai să construim ceva împreună",
-    "text": "Spune-ne pe scurt ce ai nevoie, iar noi revenim cu o propunere.",
+    "title": "Ai un proiect în minte?",
+    "text": "Scrie-ne pe scurt ce ai nevoie. Revenim cu întrebări și o propunere concretă.",
     "email": "Email",
     "phone": "Telefon",
     "telegram": "Telegram",
     "city": "Locație"
   },
-  "footer": { "rights": "Toate drepturile rezervate." }
+  "footer": {
+    "rights": "Toate drepturile rezervate.",
+    "top": "Sus"
+  }
 }

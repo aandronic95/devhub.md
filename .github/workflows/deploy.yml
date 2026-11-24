@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy
 
 on:
   push:
@@ -18,19 +18,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
-      # npm ci respinge lockfile-ul din cauza unui bug npm cu dependențe imbricate (commander)
       - run: npm install --no-audit --no-fund
-      - run: npx nuxt generate
-        # Fără domeniu propriu (user.github.io/repo), decomentează:
-        # env:
-        #   NUXT_APP_BASE_URL: /${{ github.event.repository.name }}/
+      - run: npm run generate
       - run: touch .output/public/.nojekyll
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: .output/public
 

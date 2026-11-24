@@ -1,13 +1,42 @@
 <script setup lang="ts">
 import { site } from '~/site.config'
 
-const { t } = useI18n()
-const head = useLocaleHead({ dir: true, lang: true, seo: true })
+const { t, locale } = useI18n()
+const i18nHead = useLocaleHead({ dir: true, lang: true, seo: true })
+
+const ogImage = `${site.url}/og.png`
 
 useHead(() => ({
-  htmlAttrs: { lang: head.value.htmlAttrs?.lang, dir: head.value.htmlAttrs?.dir },
-  link: [...(head.value.link || [])],
-  meta: [...(head.value.meta || [])]
+  htmlAttrs: i18nHead.value.htmlAttrs,
+  link: i18nHead.value.link,
+  meta: i18nHead.value.meta,
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'Organization',
+            '@id': `${site.url}/#organization`,
+            name: site.name,
+            url: site.url,
+            logo: `${site.url}/icon-512.png`,
+            ...(site.contact.email && { email: site.contact.email }),
+            ...(site.contact.phone && { telephone: site.contact.phone })
+          },
+          {
+            '@type': 'WebSite',
+            '@id': `${site.url}/#website`,
+            url: site.url,
+            name: site.name,
+            inLanguage: locale.value,
+            publisher: { '@id': `${site.url}/#organization` }
+          }
+        ]
+      })
+    }
+  ]
 }))
 
 useSeoMeta({
@@ -17,7 +46,12 @@ useSeoMeta({
   ogDescription: () => t('seo.description'),
   ogType: 'website',
   ogSiteName: site.name,
-  twitterCard: 'summary'
+  ogImage,
+  ogImageWidth: 1200,
+  ogImageHeight: 630,
+  ogImageAlt: site.name,
+  twitterCard: 'summary_large_image',
+  twitterImage: ogImage
 })
 </script>
 
